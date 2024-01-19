@@ -36,8 +36,10 @@ public class DiscordAvatar extends Texture {
                 String discordId = userInfo.discord_id;
                 String discordUsername = userInfo.discord_username;
                 String discordAvatarUrl = userInfo.discord_avatar_url == null ? "https://cdn.discordapp.com/embed/avatars/0.png" : userInfo.discord_avatar_url;
+
                 Systems.get(ServerSeekerSystem.class).discordId = discordId;
                 Systems.get(ServerSeekerSystem.class).discordUsername = discordUsername;
+                Systems.get(ServerSeekerSystem.class).discordAvatarUrl = discordAvatarUrl;
 
                 stream = Http.get(discordAvatarUrl).sendInputStream();
             }
