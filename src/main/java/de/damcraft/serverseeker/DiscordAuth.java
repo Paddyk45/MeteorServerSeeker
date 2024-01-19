@@ -152,7 +152,7 @@ public class DiscordAuth {
 
             Systems.get(ServerSeekerSystem.class).discordId = discordId;
             Systems.get(ServerSeekerSystem.class).discordUsername = discordUsername;
-            Systems.get(ServerSeekerSystem.class).discordAvatarUrl = discordAvatarUrl;
+            Systems.get(ServerSeekerSystem.class).discordAvatarUrl = discordAvatarUrl == null ? "https://cdn.discordapp.com/embed/avatars/0.png" : discordAvatarUrl;
 
             callback.accept(apiKey, null);
         }
